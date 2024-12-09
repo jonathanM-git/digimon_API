@@ -1,149 +1,126 @@
-  /* Centrar el contenedor */
-    .digimonSingle-container {
+.digimonSingle-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-color: #f4f4f9;
     border: 2px solid #dedede;
     border-radius: 10px;
     padding: 20px;
-    max-width: 500px;
+    max-width: 900px;
     margin: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 50%;
-    left: 40%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    margin-right: 20px; /* Aleja el contenedor del Digimon del borde derecho */
-    margin-top: 2%;
-    }
-    
-    /* Imagen del Digimon */
-    .digimon-image {
-        width: 300px;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        transition: transform 0.3s ease;
-    }
-    
-    .digimon-image:hover {
-        transform: scale(1.05);
-    }
-    
-    /* Nombre del Digimon */
-    .digimon-name {
-        font-size: 1.8em;
-        font-weight: bold;
-        color: #2c3e50;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    
-    /* Detalles del Digimon */
-    .digimon-details {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-    
-    .digimon-attribute,
-    .digimon-type,
-    .digimon-level {
-        font-size: 1.1em;
-        color: #34495e;
-        margin: 5px 0;
-    }
-    
-    .digimon-attribute strong,
-    .digimon-type strong,
-    .digimon-level strong {
-        color: #8e44ad;
-    }
-
-    
-    .digimon-buttons-container {
-    position: fixed;
-    right: 20%; /* Aleja los botones del borde derecho */
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Alinea los botones a la derecha */
-    margin-right: 20px; /* Ajusta el espacio desde la derecha */
-    }
-
-.button {
-    width: 250px; /* Tamaño fijo para el ancho */
-    height: 50px; /* Tamaño fijo para la altura */
-    color: white;
-    border: none;
-    padding: 10px;
-    margin: 5px 0;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Colores para cada botón */
+.digimon-left {
+    flex: 1; /* Ocupa la mitad del ancho */
+    text-align: center;
+    padding-right: 20px; /* Añade espacio entre la imagen y los botones */
+
+}
+
+.digimon-right {
+    flex: 1; /* Ocupa la mitad del ancho */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px; /* Añade espacio entre los botones y los detalles */
+
+}
+
+.digimon-image {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.digimon-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.digimon-details {
+    margin-top: 10px;
+}
+
+.digimon-attribute,
+.digimon-type,
+.digimon-level {
+    font-size: 1.1em;
+    color: #34495e;
+    margin: 5px 0;
+}
+
+.digimon-attribute strong,
+.digimon-type strong,
+.digimon-level strong {
+    color: #8e44ad;
+}
+
+.button {
+    width: 200px;
+    height: 40px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
 .button-description {
-    background-color: #3498db; /* Azul */
+    background-color: #3498db;
 }
 
 .button-fields {
-    background-color: #2ecc71; /* Verde */
+    background-color: #2ecc71;
 }
 
 .button-abilities {
-    background-color: #f39c12; /* Naranja */
+    background-color: #f39c12;
 }
 
 .button-prior-evolutions {
-    background-color: #e74c3c; /* Rojo */
+    background-color: #e74c3c;
 }
 
 .button-next-evolutions {
-    background-color: #9b59b6; /* Morado */
+    background-color: #9b59b6;
 }
-/* Media queries para pantallas pequeñas */
+
+  /* Responsive Design */
 @media (max-width: 768px) {
     .digimonSingle-container {
-        flex-direction: column; /* Cambia a diseño vertical */
+        flex-direction: column;
+        max-width: 90%;
         padding: 15px;
-        top: initial;
-        left: initial;
-        transform: none;
     }
 
-    .digimon-buttons-container {
+    .digimon-left,
+    .digimon-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .digimon-right {
         margin-top: 20px;
-        position: relative;
-        top: auto;
-        right: auto;
-        transform: none;
-        align-items: center;
-    }
-
-    .button {
-        width: 100%; /* Los botones ocupan todo el ancho disponible */
-        max-width: 200px;
     }
 }
 
-/* Media queries para pantallas muy pequeñas (móviles) */
 @media (max-width: 480px) {
-    .digimonSingle-container {
-        padding: 10px;
-        max-width: 90%; /* Ajusta el ancho al 90% de la pantalla */
-    }
-
     .digimon-image {
-        max-width: 200px; /* Reduce el tamaño de la imagen */
+        width: 200px; 
     }
 
     .button {
-        font-size: 0.9em; /* Reduce el tamaño de fuente de los botones */
+        font-size: 0.9em;
     }
 }

@@ -44,10 +44,10 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Asegura que ocupa toda la altura de la pantalla */
+    min-height: 100vh;
     padding: 20px;
     font-family: 'Arial', sans-serif;
-    text-align: center; /* Centra el texto de forma horizontal */
+    text-align: center;
     margin: auto;
 }
 
@@ -88,23 +88,29 @@ onMounted(() => {
 /* Contenedor de habilidades */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+
 }
 
 /* Tarjetas de habilidades */
 .skill-card {
-    background: #ffffff;
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* transition: transform 0.3s, box-shadow 0.3s; */
 }
+
+/* .skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+} */
 
 /* Nombre de la habilidad */
 .skill-name {
@@ -116,23 +122,62 @@ onMounted(() => {
 
 /* Descripción de la habilidad */
 .skill-description {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #555;
     line-height: 1.6;
 }
 
 /* Responsividad */
-@media (max-width: 768px) {
+@media (max-width: 1090px) {
     .title {
         font-size: 2em;
+        margin-bottom: 20px;
     }
 
     .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .skills-container {
+        gap: 15px;
         grid-template-columns: 1fr;
     }
 
     .skill-card {
         padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+
+    .skill-card {
+        padding: 10px;
+    }
+
+    .skill-name {
+        font-size: 1.3em;
+    }
+
+    .skill-description {
+        font-size: 1em;
     }
 }
 </style>

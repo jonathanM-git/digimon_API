@@ -158,4 +158,101 @@ onMounted(() => {
 .button-caracteristicas:hover {
     background-color: #0056b3;
 }
+
+
+/* Media Queries para pantallas más pequeñas */
+
+/* Pantallas medianas (máx 1024px) */
+@media (max-width: 1024px) {
+    /* Título más pequeño */
+    .title {
+        font-size: 2.8em;
+    }
+
+    /* Carrusel: Ajustar el número de elementos visibles */
+    .home-carrousel {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /* Tarjetas más pequeñas */
+    .digimon-card {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Imagen más pequeña */
+    .digimon-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Ajustar el tamaño del botón */
+    .button-caracteristicas {
+        font-size: 14px;
+    }
+}
+
+/* Pantallas pequeñas (máx 768px) */
+@media (max-width: 768px) {
+    /* Título más pequeño */
+    .title {
+        font-size: 2.3em;
+    }
+
+    /* Carrusel: Ajustar el número de elementos visibles */
+    .home-carrousel {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Tarjetas más pequeñas */
+    .digimon-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Imagen más pequeña */
+    .digimon-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Ajustar el tamaño del botón */
+    .button-caracteristicas {
+        font-size: 13px;
+    }
+}
+
+/* Pantallas muy pequeñas (máx 480px) */
+@media (max-width: 480px) {
+    /* Título aún más pequeño */
+    .title {
+        font-size: 1.8em;
+    }
+
+    /* Carrusel: Mostrar 1 elemento por vez */
+    .home-carrousel {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Tarjetas más pequeñas */
+    .digimon-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Imagen aún más pequeña */
+    .digimon-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Ajustar el tamaño del botón */
+    .button-caracteristicas {
+        font-size: 12px;
+    }
+}
+
 </style>

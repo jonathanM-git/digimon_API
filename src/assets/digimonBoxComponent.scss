@@ -112,7 +112,78 @@
 
 .digimon-box-item span {
     text-align: center;
-    color: white;
+    color: white; /* Asegúrate de establecer el color deseado */
     font-size: 18px;
     font-weight: bold;
+}
+
+.digimon-box-item a {
+    text-decoration: none; /* Asegúrate de que el enlace también lo aplique */
+}
+
+/* Estilos responsive para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .digimon-container {
+        grid-template-columns: repeat(4, 1fr); /* Cambia a 4 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 992px) {
+    .digimon-container {
+        grid-template-columns: repeat(3, 1fr); /* Cambia a 3 columnas en pantallas pequeñas */
+    }
+
+    .busqueda input[type="text"] {
+        width: 200px; /* Disminuye el tamaño de la barra de búsqueda en pantallas más pequeñas */
+    }
+
+    .busqueda button {
+        width: 180px; /* Ajusta el tamaño del botón */
+    }
+}
+
+@media (max-width: 768px) {
+    .digimon-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas móviles */
+    }
+
+    .busqueda input[type="text"] {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas móviles */
+    }
+
+    .busqueda button {
+        width: 100%; /* Hace el botón igual de ancho */
+    }
+
+    .pagination-controls button {
+        padding: 6px 12px; /* Ajusta el tamaño de los botones de paginación */
+    }
+
+    .digimon-box-item {
+        width: 100%; /* Asegura que cada item ocupe todo el espacio disponible */
+    }
+}
+
+@media (max-width: 480px) {
+    .digimon-container {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+
+    .digimon-box-item {
+        padding: 8px; /* Reduce el padding de los elementos */
+    }
+
+    .busqueda input[type="text"] {
+        width: 100%; /* Barra de búsqueda 100% en pantallas muy pequeñas */
+    }
+
+    .busqueda button {
+        width: 100%; /* Botón ocupa todo el ancho */
+    }
+
+    .info-button {
+        top: 10px;
+        right: 10px; /* Ajusta la posición del botón de información */
+        padding: 8px 12px;
+    }
 }
