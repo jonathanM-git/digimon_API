@@ -1,0 +1,118 @@
+/* Estilo para centrar todo el contenido */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo el contenido horizontalmente */
+    justify-content: center; /* Centra todo el contenido verticalmente */
+    min-height: 100vh;
+    text-align: center;
+    margin: auto;
+}
+
+/* Estilo para la barra de búsqueda */
+.busqueda {
+    margin-bottom: 20px; /* Espacio debajo de la barra de búsqueda */
+}
+
+.busqueda input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px; /* Ancho de la barra de búsqueda */
+}
+
+.busqueda button {
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.busqueda button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para el botón informativo */
+.info-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Mismo estilo que los botones existentes */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: #45a049; /* Efecto hover */
+}
+
+/* Contenedor de los digimons */
+.digimon-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    gap: 16px; /* Espacio entre elementos */
+    margin: 16px 0;
+}
+
+/* Controles de paginación */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.pagination-controls button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+    background-color: #45a049;
+}
+
+
+.digimon-box-item {
+    width: 90%; /* Aprovecha el 100% del espacio de la celda */
+    height: auto;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.549); /* Fondo semitransparente opcional */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
+    gap: 10px;
+}
+
+.digimon-box-img-container {
+    width: 100%;
+    background-color: white;
+}
+
+.digimon-box-img-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+}
+
+.digimon-box-item span {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}

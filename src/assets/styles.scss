@@ -1,0 +1,32 @@
+$bgColor: #0000ff;
+@use './digimonBoxComponent.scss';
+@use 'SingledigimonBoxComponent.scss';
+*{
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    .title-container{
+        text-align: center;
+        margin-bottom: 1%;
+        img{
+            height: auto;
+            width: 14%;
+        }
+    }
+}
+
+body{
+    background-color: $bgColor;
+    background-image: url('/img/FondoDigimon.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    main{
+        width: 100%;
+        display: flex;
+    }
+}
+
