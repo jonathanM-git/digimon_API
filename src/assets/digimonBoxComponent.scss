@@ -121,6 +121,13 @@
     text-decoration: none; /* Asegúrate de que el enlace también lo aplique */
 }
 
+/* Estilo para el mensaje de "no resultados" */
+.mensaje-no-resultados {
+    color: #e74c3c; /* Rojo */
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
+}
 /* Estilos responsive para pantallas más pequeñas */
 @media (max-width: 1200px) {
     .digimon-container {

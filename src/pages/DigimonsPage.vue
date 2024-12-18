@@ -4,6 +4,9 @@
         <div class="busqueda">
             <input v-model="nombreBusqueda" @input="filtrarDigimons" type="text" placeholder="Buscar por nombre" />
             <button @click="resetearBusqueda">Resetear Búsqueda</button> <!-- Botón para resetear -->
+            <!-- Mensaje cuando no hay resultados -->
+            <p v-if="noResultados" class="mensaje-no-resultados">No se encontró ningún Digimon con ese nombre.</p>
+
         </div>
 
         <!-- Contenedor principal -->
@@ -33,31 +36,37 @@
     const digimonList = ref([]);
     const PaginaActual = ref(0);
     const nombreBusqueda = ref(""); // El valor de la búsqueda
+    const noResultados = ref(false); // Variable para mostrar el mensaje de "no resultados"
+
 
     const fetchDigimons = (page) => {
         fetch(`https://digi-api.com/api/v1/digimon?pageSize=10&page=${page}`)
             .then(response => response.json())
             .then(data => {
                 digimonList.value = data.content;
+                noResultados.value = false; // Resetear el mensaje al cargar una página
             });
     };
 
     // Función para filtrar los Digimons mientras escribes en el buscador
     const filtrarDigimons = () => {
         if (nombreBusqueda.value.trim()) {
-            fetch(`https://digi-api.com/api/v1/digimon?name=${nombreBusqueda.value}&pageSize=100`)
+            fetch(`https://digi-api.com/api/v1/digimon?name=${nombreBusqueda.value}&pageSize=200`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.content && data.content.length > 0) {
                         digimonList.value = data.content;
+                        noResultados.value = false; // Ocultar el mensaje si hay resultados
                     } 
-                    // else {
-                    //     digimonList.value = [];
-                    //     alert("No se encontró ningún digimon con ese nombre.");
-                    // }
+                    else {
+                        // digimonList.value = [];
+                        // alert("No se encontró ningún digimon con ese nombre.");
+                        noResultados.value = true; // Mostrar el mensaje
+                    }
                 })
         } else {
             fetchDigimons(PaginaActual.value);  // Si no hay búsqueda, mostrar todos los digimons
+            noResultados.value = false; // Ocultar el mensaje
         }
     };
 
@@ -65,6 +74,7 @@
     const resetearBusqueda = () => {
         nombreBusqueda.value = "";
         fetchDigimons(PaginaActual.value);  // Volver a cargar todos los digimons
+        noResultados.value = false; // Ocultar el mensaje
     };
 
     // Inicializar con la primera página
@@ -97,4 +107,3 @@
         });
     };
 </script>
-
