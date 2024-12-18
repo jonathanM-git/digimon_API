@@ -22,11 +22,12 @@ body{
     background-image: url('/img/FondoDigimon.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 
     main{
         width: 100%;
         display: flex;
+        justify-content: center;
     }
 }
 

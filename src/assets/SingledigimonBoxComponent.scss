@@ -2,125 +2,160 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
     background-color: #f4f4f9;
-    border: 2px solid #dedede;
-    border-radius: 10px;
     padding: 20px;
-    max-width: 900px;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.digimon-left {
-    flex: 1; /* Ocupa la mitad del ancho */
-    text-align: center;
-    padding-right: 20px; /* Añade espacio entre la imagen y los botones */
-
-}
-
-.digimon-right {
-    flex: 1; /* Ocupa la mitad del ancho */
+  }
+ 
+  /* Contenedor que agrupa los detalles y los botones */
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los contenedores */
+    width: 90%;
+    max-width: 1200px;
+  }
+ 
+  /* Contenedor de los detalles del Digimon */
+  .digimon-details-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 20px; /* Añade espacio entre los botones y los detalles */
-
-}
-
-.digimon-image {
-    width: 250px;
+    align-items: flex-start; /* Alinea los detalles a la izquierda */
+    width: 50%;
+    margin-left: 20px; /* Desplaza ligeramente hacia la izquierda */
+  }
+ 
+  /* Imagen del Digimon */
+  .digimon-image {
+    width: 100%;
+    max-width: 300px;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
-}
-
-.digimon-name {
+  }
+ 
+  /* Nombre del Digimon */
+  .digimon-name {
     font-size: 1.8em;
     font-weight: bold;
     color: #2c3e50;
     text-align: center;
     margin-bottom: 10px;
-}
-
-.digimon-details {
-    margin-top: 10px;
-}
-
-.digimon-attribute,
-.digimon-type,
-.digimon-level {
+  }
+ 
+  /* Detalles del Digimon */
+  .digimon-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+ 
+  .digimon-attribute,
+  .digimon-type,
+  .digimon-level {
     font-size: 1.1em;
     color: #34495e;
     margin: 5px 0;
-}
-
-.digimon-attribute strong,
-.digimon-type strong,
-.digimon-level strong {
+  }
+ 
+  .digimon-attribute strong,
+  .digimon-type strong,
+  .digimon-level strong {
     color: #8e44ad;
+  }
+ 
+/* Contenedor de los botones */
+.digimon-buttons-container {
+    display: flex; /* Usamos Flexbox */
+    flex-direction: column; /* Los botones estarán en una columna */
+    width: 50%; /* Ajusta el ancho del contenedor */
+    margin-top: 20px;
+    margin-right: 20px; /* Desplaza ligeramente hacia la derecha */
+    gap: 10px; /* Separación entre los botones */
+    height: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
 }
 
+
+/* Botones */
 .button {
-    width: 200px;
-    height: 40px;
-    margin: 10px 0;
-    border-radius: 5px;
+    flex: 1; /* Hace que cada botón ocupe el mismo espacio */
+    height: 50px; /* Altura de los botones */
+    color: white;
+    border: none;
     font-size: 1em;
     cursor: pointer;
-    border: none;
-    color: #fff;
+    border-radius: 5px;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho del contenedor */
 }
 
+
+/* Colores para los botones */
 .button-description {
-    background-color: #3498db;
+    background-color: #3498db; /* Azul */
 }
+
 
 .button-fields {
-    background-color: #2ecc71;
+    background-color: #2ecc71; /* Verde */
 }
+
 
 .button-abilities {
-    background-color: #f39c12;
+    background-color: #f39c12; /* Naranja */
 }
+
 
 .button-prior-evolutions {
-    background-color: #e74c3c;
+    background-color: #e74c3c; /* Rojo */
 }
+
 
 .button-next-evolutions {
-    background-color: #9b59b6;
+    background-color: #9b59b6; /* Morado */
 }
 
-  /* Responsive Design */
+
+
+/* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
-    .digimonSingle-container {
-        flex-direction: column;
-        max-width: 90%;
-        padding: 15px;
+    .content-wrapper {
+      flex-direction: column; /* Cambia los elementos a una columna */
     }
-
-    .digimon-left,
-    .digimon-right {
-        flex: none;
-        width: 100%;
+  
+    .digimon-details-container,
+    .digimon-buttons-container {
+      width: 100%; /* Cada contenedor ocupa todo el ancho */
+      margin-left: 0; /* Elimina el margen izquierdo */
+      margin-right: 0; /* Elimina el margen derecho */
     }
-
-    .digimon-right {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) {
+  
     .digimon-image {
-        width: 200px; 
+      max-width: 200px; /* Reduce el tamaño de la imagen */
     }
-
+  
+    .digimon-name {
+      font-size: 1.5em; /* Ajusta el tamaño del texto */
+    }
+  
     .button {
-        font-size: 0.9em;
+      height: 45px; /* Reduce la altura de los botones */
+      font-size: 0.9em; /* Ajusta el tamaño del texto en los botones */
     }
-}
+  }
+  
+  @media (max-width: 480px) {
+    .digimon-name {
+      font-size: 1.3em; /* Reduce aún más el tamaño del texto */
+    }
+  
+    .digimon-image {
+      max-width: 150px; /* Reduce el tamaño de la imagen */
+    }
+  
+    .button {
+      font-size: 0.8em; /* Ajusta el tamaño del texto en los botones */
+      height: 40px; /* Reduce la altura de los botones */
+    }
+  }
